@@ -41,3 +41,25 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the RubyApi project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/ruby_api/blob/master/CODE_OF_CONDUCT.md).
+
+## Usage
+
+Step-1:
+irb
+Step-2:
+>> require_relative 'lib/ruby_api'
+
+Step-3:
+>> RubyApi.characters(limit:3)
+
+Step-4:
+>> RubyApi.get_character('1011334')
+
+Here is few examples which i tested in 'irb' for testing:
+
+1. res=marvel.get_character(11011334222222222222)
+ OP=> {"code"=>404, "status"=>"We couldn't find that character"}
+2.res=marvel.characters(1, 2)
+ => {"code"=>"InvalidCredentials", "message"=>"That hash, timestamp and key combination is invalid."}
+3.res=marvel.characters(1, 2000000000000)
+ => {"code"=>409, "status"=>"You may not request more than 100 items."}
